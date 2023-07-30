@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ProductApplication",
+            "request": "launch",
+            "mainClass": "com.mykart.product.ProductApplication",
+            "projectName": "product"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OrderServiceApplication<order>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mykart.order.OrderServiceApplication",
+            "projectName": "order",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

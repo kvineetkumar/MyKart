@@ -1,9 +1,12 @@
 package com.mykart.order.service;
 
 import com.mykart.order.dto.OrderDto;
-import com.mykart.order.entity.Order;
+import com.mykart.order.entity.Cart;
+import com.mykart.order.entity.CardItem;
 import com.mykart.order.entity.Product;
+import com.mykart.order.repository.OrderItemRepository;
 import com.mykart.order.repository.OrderRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -22,22 +25,24 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
-    public List<Order> getAllOrders() {
+    public List<Cart> getAllOrders() {
         return orderRepository.findAll();
     }
 
     @Override
-    public Order getOrderById(String id) {
-        Optional<Order> orderOptional = orderRepository.findById(id);
+    public Cart getOrderById(String id) {
+        Optional<Cart> orderOptional = orderRepository.findById(id);
         return orderOptional.get();
     }
 
     @Override
-    public Order createOrder(OrderDto orderDto) {
+    @Transactional
+    public Cart createOrder(OrderDto orderDto) {
         RestTemplate restTemplate = new RestTemplate();
-
         String url = PRODUCT_URL + orderDto.getProductIds().stream().map(String::valueOf).collect(Collectors.joining(","));
         ResponseEntity<List<Product>> response = restTemplate.exchange(
                 url,
@@ -47,15 +52,21 @@ public class OrderServiceImpl implements OrderService {
                 }
         );
 
-        // Get the list of products from the response
         List<Product> products = response.getBody();
+        var productIds = orderDto.getProductIds();
+        Cart cart = new Cart();
 
-        Order order = null;
         if (products != null && products.size() == orderDto.getProductIds().size()) {
-            order = new Order(products);
-            return orderRepository.save(order);
+            productIds.forEach(productId -> {
+                CardItem cardItem = new CardItem();
+                cardItem.setProductId(productId);
+                cardItem.setQuantity(1);
+                cardItem.setCart(cart);
+                cart.getCardItems().add(cardItem);
+            });
+            return orderRepository.save(cart);
         } else {
-            return order;
+            return null;
         }
     }
 }

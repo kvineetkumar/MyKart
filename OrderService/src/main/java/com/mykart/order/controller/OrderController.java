@@ -1,7 +1,7 @@
 package com.mykart.order.controller;
 
 import com.mykart.order.dto.OrderDto;
-import com.mykart.order.entity.Order;
+import com.mykart.order.entity.Cart;
 import com.mykart.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,17 +17,17 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    ResponseEntity<List<Order>> getAllOrders() {
+    ResponseEntity<List<Cart>> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllOrders());
     }
 
     @GetMapping("{id}")
-    ResponseEntity<Order> getOrderById(@PathVariable("id") String id) {
+    ResponseEntity<Cart> getOrderById(@PathVariable("id") String id) {
         return ResponseEntity.ok(orderService.getOrderById(id));
     }
 
     @PostMapping
-    ResponseEntity<Order> createOrder(@RequestBody OrderDto orderDto) {
+    ResponseEntity<Cart> createOrder(@RequestBody OrderDto orderDto) {
         return ResponseEntity.ok(orderService.createOrder(orderDto));
     }
 }

@@ -1,4 +1,4 @@
-package com.mykart.order.entity;
+package com.mykart.cart.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -11,7 +11,7 @@ import org.hibernate.annotations.UuidGenerator;
 @Setter
 @NoArgsConstructor
 @Entity(name = "cart_items")
-public class CardItem {
+public class CartItem {
     @Id
     @UuidGenerator
     private String id;

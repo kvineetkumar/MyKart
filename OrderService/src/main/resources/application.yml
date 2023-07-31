@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Order Service
+    name: Cart Service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root

@@ -1,4 +1,4 @@
-package com.mykart.order.entity;
+package com.mykart.cart.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,5 +19,5 @@ public class Cart {
     @Column(name = "cart_id")
     private String id;
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-    private List<CardItem> cardItems = new ArrayList<>();
+    private List<CartItem> cartItems = new ArrayList<>();
 }

@@ -1,4 +1,4 @@
-package com.mykart.order.entity;
+package com.mykart.cart.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

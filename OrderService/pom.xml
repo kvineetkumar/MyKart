@@ -11,8 +11,8 @@
     <groupId>com.mykart</groupId>
     <artifactId>sortOrder</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Order Service</name>
-    <description>Order Service</description>
+    <name>Cart Service</name>
+    <description>Cart Service</description>
     <properties>
         <java.version>17</java.version>
     </properties>

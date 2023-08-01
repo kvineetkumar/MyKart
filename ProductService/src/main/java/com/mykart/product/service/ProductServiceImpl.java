@@ -36,4 +36,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProductsById(List<String> productIds) {
         return productRepository.findAllById(productIds);
     }
+
+    @Override
+    public List<Product> searchForProductsByKey(String keyword) {
+        return productRepository.findByKeyword(keyword);
+    }
 }

@@ -28,13 +28,18 @@ public class ProductController {
         else return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("search")
+    /*@GetMapping("search")
     ResponseEntity<List<Product>> getProductsByName(@RequestParam("q") String query) {
         return ResponseEntity.ok(productService.getProductsByName(query));
-    }
+    }*/
 
     @GetMapping("sort/date")
     ResponseEntity<List<Product>> getProductsByDateOrder(@RequestParam("order") String order) {
         return ResponseEntity.ok(productService.getProductsByDateOrder(SortOrder.valueOf(order)));
+    }
+
+    @GetMapping("search")
+    ResponseEntity<List<Product>> searchForProducts(@RequestParam("q") String query) {
+        return ResponseEntity.ok(productService.searchForProductsByKey(query));
     }
 }

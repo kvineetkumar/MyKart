@@ -14,4 +14,6 @@ public interface ProductService {
     List<Product> getProductsByDateOrder(SortOrder sortOrder);
 
     List<Product> getProductsById(List<String> productIds);
+
+    List<Product> searchForProductsByKey(String keyword);
 }

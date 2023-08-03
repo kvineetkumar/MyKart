@@ -2,6 +2,8 @@ package com.mykart.product.service;
 
 import com.mykart.product.constant.SortOrder;
 import com.mykart.product.entity.Product;
+import com.mykart.product.exception.InvalidInputException;
+import com.mykart.product.exception.ResourcesNotFoundException;
 import com.mykart.product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,11 +27,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProductsByDateOrder(SortOrder sortOrder) {
-        return switch (sortOrder) {
-            case ASC -> productRepository.findAllByOrderByManufacturedDateAsc();
-            case DESC -> productRepository.findAllByOrderByManufacturedDateDesc();
-        };
+    public List<Product> getProductsByDateOrder(String sortOrder) {
+        if (sortOrder.contentEquals(SortOrder.ASC.name()) ||
+                sortOrder.contentEquals(SortOrder.DESC.name())
+                || sortOrder.isEmpty()) {
+            SortOrder order = sortOrder.isEmpty() ? SortOrder.ASC : SortOrder.valueOf(sortOrder);
+            List<Product> products = switch (order) {
+                case ASC -> productRepository.findAllByOrderByManufacturedDateAsc();
+                case DESC -> productRepository.findAllByOrderByManufacturedDateDesc();
+            };
+
+            if (products.isEmpty()) throw new ResourcesNotFoundException("");
+            else return products;
+        } else throw new InvalidInputException("Sort order should be either ASC or DESC");
     }
 
     @Override
@@ -39,6 +49,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> searchForProductsByKey(String keyword) {
-        return productRepository.findByKeyword(keyword);
+        List<Product> products = productRepository.findByKeyword(keyword);
+        if (products.isEmpty()) throw new ResourcesNotFoundException("");
+        else return products;
     }
 }

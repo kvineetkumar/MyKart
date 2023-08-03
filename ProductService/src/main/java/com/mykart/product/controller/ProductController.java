@@ -1,8 +1,9 @@
 package com.mykart.product.controller;
 
-import com.mykart.product.constant.SortOrder;
 import com.mykart.product.entity.Product;
 import com.mykart.product.service.ProductService;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,11 +36,11 @@ public class ProductController {
 
     @GetMapping("sort/date")
     ResponseEntity<List<Product>> getProductsByDateOrder(@RequestParam("order") String order) {
-        return ResponseEntity.ok(productService.getProductsByDateOrder(SortOrder.valueOf(order)));
+        return ResponseEntity.ok(productService.getProductsByDateOrder(order));
     }
 
     @GetMapping("search")
-    ResponseEntity<List<Product>> searchForProducts(@RequestParam("q") String query) {
+    ResponseEntity<List<Product>> searchForProducts(@RequestParam("q") @NotNull @NotEmpty String query) {
         return ResponseEntity.ok(productService.searchForProductsByKey(query));
     }
 }

@@ -5,45 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="617b2a0b-1a3e-485d-a73e-b08e40b4452b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyKart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyKart.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0cc472297805052500c265e2e0a354ee8cfa2ebc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12abbeb2e5453dbf79241135f537213dffc9bbfa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5de21f3b6a86c5c5306bbe4c2df656208dc397ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/710483c98091858fa8c4cfec8636b9521d76f27d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0cc472297805052500c265e2e0a354ee8cfa2ebc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/2/12abbeb2e5453dbf79241135f537213dffc9bbfa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5de21f3b6a86c5c5306bbe4c2df656208dc397ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/710483c98091858fa8c4cfec8636b9521d76f27d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/CartApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/config/CartConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/controller/CartController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/dto/CartDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/entity/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/entity/CartItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/model/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/repository/CartItemRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/repository/CartRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/service/CartService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/java/com/mykart/cart/service/CartServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService/src/test/java/com/ecommerce/oms/OmsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/CartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/test/java/com/mykart/cart/CartApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +22,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2TO3R6lOdN33FfXCIcOfGKnAGWT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,13 +33,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "master",
+    "last_directory_selection": "C:/Users/kvine/Desktop/Learning/MyKart/CartService/src/test/java/com/mykart/cart",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ProductApplication">
+  <component name="RunManager" selected="Application.CartApplication">
     <configuration name="CartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mykart.cart.CartApplication" />
       <module name="CartService" />
@@ -102,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProductApplication" />
         <item itemvalue="Application.CartApplication" />
+        <item itemvalue="Application.ProductApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -116,6 +86,28 @@
       <option name="presentableId" value="Default" />
       <updated>1690900288520</updated>
     </task>
+    <task id="LOCAL-00001" summary="- renamed Order to Cart Service - added searchByKeyword API in Product Service">
+      <option name="closed" value="true" />
+      <created>1690900665066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690900665066</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- Major Fix: Added unversioned files of Cart Service">
+      <option name="closed" value="true" />
+      <created>1690900777280</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690900777280</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- renamed Order to Cart Service - added searchByKeyword API in Product Service" />
+    <MESSAGE value="- Major Fix: Added unversioned files of Cart Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Major Fix: Added unversioned files of Cart Service" />
   </component>
 </project>

@@ -22,11 +22,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProductsByName(String query) {
-        return productRepository.findByName(query);
-    }
-
-    @Override
     public List<Product> getProductsByDateOrder(String sortOrder) {
         if (sortOrder.contentEquals(SortOrder.ASC.name()) ||
                 sortOrder.contentEquals(SortOrder.DESC.name())
@@ -44,7 +39,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProductsById(List<String> productIds) {
-        return productRepository.findAllById(productIds);
+        if (!productIds.isEmpty())
+            return productRepository.findAllById(productIds);
+        else throw new InvalidInputException("Invalid product Id(s) provided.");
     }
 
     @Override

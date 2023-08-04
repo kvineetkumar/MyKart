@@ -1,5 +1,7 @@
 server:
   port: 8082
+  error:
+    include-message: ALWAYS
 
 spring:
   application:
@@ -16,3 +18,10 @@ spring:
       hibernate:
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+
+logging:
+  .level:
+    root: ERROR
+    com.mykart: DEBUG
+    org.springframework.web: ERROR
+    org.hibernate: ERROR

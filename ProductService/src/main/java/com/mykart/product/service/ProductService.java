@@ -8,8 +8,6 @@ public interface ProductService {
 
     List<Product> getAllProducts();
 
-    List<Product> getProductsByName(String query);
-
     List<Product> getProductsByDateOrder(String sortOrder);
 
     List<Product> getProductsById(List<String> productIds);

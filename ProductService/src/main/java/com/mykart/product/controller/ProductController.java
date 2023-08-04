@@ -24,15 +24,8 @@ public class ProductController {
 
     @GetMapping("{productIds}")
     ResponseEntity<List<Product>> getProductsByIds(@PathVariable("productIds") List<String> productIds) {
-        if (!productIds.isEmpty())
-            return ResponseEntity.ok(productService.getProductsById(productIds));
-        else return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(productService.getProductsById(productIds));
     }
-
-    /*@GetMapping("search")
-    ResponseEntity<List<Product>> getProductsByName(@RequestParam("q") String query) {
-        return ResponseEntity.ok(productService.getProductsByName(query));
-    }*/
 
     @GetMapping("sort/date")
     ResponseEntity<List<Product>> getProductsByDateOrder(@RequestParam("order") String order) {

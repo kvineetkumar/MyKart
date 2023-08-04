@@ -19,8 +19,8 @@ public interface ProductRepository extends JpaRepository<Product, String> {
     List<Product> findAllByOrderByManufacturedDateDesc();
 
     default List<Product> findByKeyword(String keyword) {
-        return findAllByKeywordsContainingIgnoreCase(keyword);
+        return findAllByKeywordsContainingIgnoreCaseOrNameContainingIgnoreCase(keyword, keyword);
     }
 
-    List<Product> findAllByKeywordsContainingIgnoreCase(@Param("keyword") String keyword);
+    List<Product> findAllByKeywordsContainingIgnoreCaseOrNameContainingIgnoreCase(@Param("keyword") String keyword, @Param("name") String name);
 }

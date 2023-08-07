@@ -18,6 +18,8 @@ spring:
       hibernate:
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd
 
 logging:
   .level:
@@ -25,3 +27,9 @@ logging:
     com.mykart: DEBUG
     org.springframework.web: ERROR
     org.hibernate: ERROR
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

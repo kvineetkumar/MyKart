@@ -7,6 +7,7 @@ import com.mykart.cart.service.CartService;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,17 +26,20 @@ public class CartController {
     }
 
     @GetMapping("{id}")
-    ResponseEntity<Cart> getCartById(@PathVariable("id") @NotNull @NotEmpty String id) {
-        return ResponseEntity.ok(cartService.getCartById(id));
+    @ResponseStatus(HttpStatus.FOUND)
+    Cart getCartById(@PathVariable("id") @NotNull @NotEmpty String id) {
+        return cartService.getCartById(id);
     }
 
     @PostMapping
-    ResponseEntity<Cart> createCart(@RequestBody CartDto cartDto) {
-        return ResponseEntity.ok(cartService.createCart(cartDto));
+    @ResponseStatus(HttpStatus.CREATED)
+    Cart createCart(@RequestBody CartDto cartDto) {
+        return cartService.createCart(cartDto);
     }
 
     @GetMapping("item/{id}/product")
-    ResponseEntity<Product> getProductFromCartItem(@PathVariable("id") String id) {
-        return ResponseEntity.ok(cartService.getProductFromCartItem(id));
+    @ResponseStatus(HttpStatus.FOUND)
+    Product getProductFromCartItem(@PathVariable("id") String id) {
+        return cartService.getProductFromCartItem(id);
     }
 }

@@ -15,4 +15,6 @@ public interface CartService {
     Cart createCart(CartDto cartDto);
 
     Product getProductFromCartItem(String cartItemId);
+
+    void deleteCart(String id);
 }

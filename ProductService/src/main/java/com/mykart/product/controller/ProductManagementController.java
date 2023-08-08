@@ -42,4 +42,16 @@ public class ProductManagementController {
     void deleteProducts(@RequestBody @NotEmpty List<String> productIds) {
         productManagementService.deleteProducts(productIds);
     }
+
+    @PatchMapping("{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    Product updateProduct(@PathVariable("id") String id, @RequestBody ProductRequest productRequest) {
+        return productManagementService.updateProduct(id, productRequest);
+    }
+
+    @PutMapping("{id}")
+    @ResponseStatus(value = HttpStatus.CREATED)
+    Product replaceProduct(@PathVariable("id") String id, @RequestBody ProductRequest productRequest) {
+        return productManagementService.updateProduct(id, productRequest);
+    }
 }

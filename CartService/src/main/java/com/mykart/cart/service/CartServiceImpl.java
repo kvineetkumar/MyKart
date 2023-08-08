@@ -94,4 +94,11 @@ public class CartServiceImpl implements CartService {
         }
         return null;
     }
+
+    @Override
+    public void deleteCart(String id) {
+        if (cartRepository.existsById(id))
+            cartRepository.deleteById(id);
+        else throw new ResourcesNotFoundException("");
+    }
 }

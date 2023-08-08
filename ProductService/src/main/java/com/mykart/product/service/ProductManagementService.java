@@ -25,8 +25,27 @@ public class ProductManagementService {
     }
 
     public List<Product> createProducts(List<ProductRequest> productRequests) {
+        List<Product> products = mapProductRequestToProductEntity(productRequests);
+        return productRepository.saveAll(products);
+    }
+
+    public void deleteProduct(String productId) {
+        productRepository.deleteById(productId);
+    }
+
+    public void deleteProducts(List<String> productIds) {
+        productRepository.deleteAllById(productIds);
+    }
+
+    public Product updateProduct(String id, ProductRequest productRequest) {
+        Product product = mapProductRequestToProductEntity(Collections.singletonList(productRequest)).get(0);
+        product.setId(id);
+        return productRepository.save(product);
+    }
+
+    private List<Product> mapProductRequestToProductEntity(List<ProductRequest> productRequests) {
         final ModelMapper modelMapper = new ModelMapper();
-        var products = productRequests.stream().map(productRequest -> {
+        return productRequests.stream().map(productRequest -> {
             modelMapper.addMappings(new PropertyMap<ProductRequest, Product>() {
                 @Override
                 protected void configure() {
@@ -37,14 +56,5 @@ public class ProductManagementService {
             product.setKeywords(productRequest.getKeywords());
             return product;
         }).toList();
-        return productRepository.saveAll(products);
-    }
-
-    public void deleteProduct(String productId) {
-        productRepository.deleteById(productId);
-    }
-
-    public void deleteProducts(List<String> productIds) {
-        productRepository.deleteAllById(productIds);
     }
 }

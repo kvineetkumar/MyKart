@@ -42,4 +42,11 @@ public class CartController {
     Product getProductFromCartItem(@PathVariable("id") String id) {
         return cartService.getProductFromCartItem(id);
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    String deleteCart(@PathVariable("id") String id) {
+        cartService.deleteCart(id);
+        return "Cart deleted successfully.";
+    }
 }

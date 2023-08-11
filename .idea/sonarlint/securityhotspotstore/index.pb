@@ -5,8 +5,6 @@ GProductService/src/main/java/com/mykart/product/ProductApplication.java,7\1\71
 OProductService/src/main/java/com/mykart/product/service/ProductServiceImpl.java,1\3\137f2573f571cf17910e8172774eb3ef68028761
 Å
 QProductService/src/main/java/com/mykart/product/repository/ProductRepository.java,6\3\632b10a5b9ba8b81a93abf066e035ea162836651
-F
-ProductService/pom.xml,5\d\5de21f3b6a86c5c5306bbe4c2df656208dc397ac
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 {
@@ -23,10 +21,6 @@ x
 HCartService/src/main/java/com/mykart/cart/repository/CartRepository.java,2\5\25afd5b47cc427f86faf3c939b7345c9f0ac163e
 v
 FCartService/src/main/java/com/mykart/cart/service/CartServiceImpl.java,f\f\ff358f8e91d12bc18248af448242f4080c66ed20
-x
-HCartService/src/main/java/com/mykart/cart/controller/CartController.java,a\e\ae831cbeface08b767349181d1f2c05ec3fc04c4
-D
-CartService/mvnw.cmd,2\6\269a9a01dc8bf7cf75d33d3d10f71513f65d8471
 r
 BCartService/src/main/java/com/mykart/cart/service/CartService.java,3\8\38e5550daf2f7f4d24244dd2702aaab660426e05
 w
@@ -43,7 +37,15 @@ l
 <CartService/src/main/java/com/mykart/cart/model/Product.java,9\1\91f578467d1f5aa4d9909c2847440d76b6312c83
 s
 CCartService/src/test/java/com/mykart/cart/CartApplicationTests.java,3\6\3643636b034b87c1d24cb7f1f3a062515e86efd5
-n
->CartService/src/main/java/com/mykart/cart/entity/CartItem.java,a\3\a3a9aaeb726e3c9e5c54f35fa1f0218a45a4b157
 j
 :CartService/src/main/java/com/mykart/cart/entity/Cart.java,c\5\c5c3b135fe8d1899752023b8c7cd26cc919314f6
+n
+>CartService/src/main/java/com/mykart/cart/entity/CartItem.java,a\3\a3a9aaeb726e3c9e5c54f35fa1f0218a45a4b157
+D
+CartService/mvnw.cmd,2\6\269a9a01dc8bf7cf75d33d3d10f71513f65d8471
+F
+ProductService/pom.xml,5\d\5de21f3b6a86c5c5306bbe4c2df656208dc397ac
+
+OProductService/src/main/java/com/mykart/product/dto/request/ProductRequest.java,0\f\0fff11cececb6c917971049c00aff5935cec1dd9
+x
+HCartService/src/main/java/com/mykart/cart/controller/CartController.java,a\e\ae831cbeface08b767349181d1f2c05ec3fc04c4

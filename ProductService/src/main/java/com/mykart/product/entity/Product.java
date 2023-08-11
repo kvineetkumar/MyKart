@@ -17,7 +17,8 @@ public class Product {
     @UuidGenerator
     private String id;
     private String name;
-    private BigDecimal price;
+    private BigDecimal originalPrice;
+    private BigDecimal netPrice;
     private String description;
     @Column(columnDefinition = "VARCHAR(255)")
     private String keywords;

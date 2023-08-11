@@ -1,5 +1,6 @@
 package com.mykart.cart.controller;
 
+import com.mykart.cart.dto.CartBillResponse;
 import com.mykart.cart.dto.CartDto;
 import com.mykart.cart.entity.Cart;
 import com.mykart.cart.model.Product;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -48,5 +50,11 @@ public class CartController {
     String deleteCart(@PathVariable("id") String id) {
         cartService.deleteCart(id);
         return "Cart deleted successfully.";
+    }
+
+    @GetMapping({"{id}/bill"})
+    @ResponseStatus(value = HttpStatus.OK)
+    CartBillResponse getCartBill(@PathVariable("id") String id) {
+        return cartService.getCartBill(id);
     }
 }

@@ -1,9 +1,11 @@
 package com.mykart.cart.service;
 
+import com.mykart.cart.dto.CartBillResponse;
 import com.mykart.cart.dto.CartDto;
 import com.mykart.cart.entity.Cart;
 import com.mykart.cart.model.Product;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface CartService {
@@ -17,4 +19,6 @@ public interface CartService {
     Product getProductFromCartItem(String cartItemId);
 
     void deleteCart(String id);
+
+    CartBillResponse getCartBill(String id);
 }

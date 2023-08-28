@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: Product Service
+    name: product-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
@@ -33,3 +33,12 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka

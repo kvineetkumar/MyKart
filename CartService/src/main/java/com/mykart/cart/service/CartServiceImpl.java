@@ -27,12 +27,14 @@ import java.util.stream.Collectors;
 @Service
 public class CartServiceImpl implements CartService {
 
-    private static final String PRODUCT_URL = "http://localhost:8081/api/v1/product/";
+    private static final String PRODUCT_URL = "http://product-service/api/v1/product/";
 
     @Autowired
     private CartRepository cartRepository;
     @Autowired
     private CartItemRepository cartItemRepository;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Override
     public List<Cart> getAllCarts() {
@@ -108,7 +110,6 @@ public class CartServiceImpl implements CartService {
     }
 
     private List<Product> getProductsFromIds(List<String> productIds) {
-        RestTemplate restTemplate = new RestTemplate();
         String url = PRODUCT_URL + productIds.stream().map(String::valueOf).collect(Collectors.joining(","));
         ResponseEntity<List<Product>> response = restTemplate.exchange(
                 url,

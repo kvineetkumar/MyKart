@@ -1,0 +1,17 @@
+server:
+  port: 8083
+  error:
+    include-message: ALWAYS
+
+spring:
+  application:
+    name: Discovery Server
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

@@ -11,10 +11,8 @@ Ecommerce backend with following features:
   2. Search for products by name.
   3. Manage a product from product catalog.
 
-**Technologies Used:**
-  Languages & Framework: Java 17, Spring Boot, Spring MVC, Spring Data JPA
-  Database: MySQL
-  Dependencies: Swagger/OpenAPI, JUnit/Mockito, Lombok, Netflix Eureka
-  Additional Tools: IntelliJ IDEA, Postman
+**Technologies Used:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, MySQL, JUnit, IntelliJ IDEA, Postman
 
-  **Note:** More features coming soon like Security, CI/CD and deployment to AWS cloud...
+**Spring Boot Features Used:** Spring MVC, Spring Data JPA, Spring Test, Spring Validation, Spring Doc, Spring Cloud Netflix Eureka
+
+**Note:** More features coming soon like Security, CI/CD and deployment to AWS cloud...

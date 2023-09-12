@@ -18,6 +18,9 @@ public class ProductManagementService {
     @Autowired
     private ProductRepository productRepository;
 
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 
     @PostMapping
     public Product createProduct(ProductRequest productRequest) {

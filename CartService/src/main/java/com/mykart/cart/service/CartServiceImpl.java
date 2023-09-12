@@ -2,25 +2,24 @@ package com.mykart.cart.service;
 
 import com.mykart.cart.dto.CartBillResponse;
 import com.mykart.cart.dto.CartDto;
+import com.mykart.cart.dto.UpdateCartDto;
 import com.mykart.cart.entity.Cart;
 import com.mykart.cart.entity.CartItem;
 import com.mykart.cart.exception.ResourcesNotFoundException;
+import com.mykart.cart.exception.StockNotAvailableException;
 import com.mykart.cart.model.Product;
 import com.mykart.cart.repository.CartItemRepository;
 import com.mykart.cart.repository.CartRepository;
 import jakarta.transaction.Transactional;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -35,6 +34,8 @@ public class CartServiceImpl implements CartService {
     private CartItemRepository cartItemRepository;
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Override
     public List<Cart> getAllCarts() {
@@ -51,11 +52,16 @@ public class CartServiceImpl implements CartService {
     @Override
     @Transactional
     public Cart createCart(CartDto cartDto) {
-        List<Product> products = getProductsFromIds(cartDto.productIds());
-        var productIds = cartDto.productIds();
-        Cart cart = new Cart();
+        Cart cart;
+        if (cartDto instanceof UpdateCartDto) {
+            var cartOptional = cartRepository.findById(((UpdateCartDto) cartDto).getCartId());
+            cart = cartOptional.orElseGet(Cart::new);
+        } else cart = new Cart();
 
-        if (products != null && products.size() == cartDto.productIds().size()) {
+        List<Product> products = getProductsFromIds(cartDto.getProductIds());
+        var productIds = cartDto.getProductIds();
+
+        if (products.size() == cartDto.getProductIds().size()) {
             productIds.forEach(productId -> {
                 CartItem cartItem = new CartItem();
                 cartItem.setProductId(productId);
@@ -76,7 +82,7 @@ public class CartServiceImpl implements CartService {
             CartItem cartItem = cartItemOptional.get();
             var productId = cartItem.getProductId();
             List<Product> products = getProductsFromIds(Collections.singletonList(productId));
-            if (products != null && !products.isEmpty())
+            if (!products.isEmpty())
                 return products.get(0);
         }
         return null;
@@ -96,7 +102,16 @@ public class CartServiceImpl implements CartService {
         List<CartBillResponse.CartItemResponse> cartItemResponses = new ArrayList<>();
         BigDecimal totalPrice = cartOptional.map(cart -> {
             var productIds = cart.getCartItems().stream().map(CartItem::getProductId).toList();
+
+            //REST call to fetch products by ids from Product Catalog Service.
             var products = getProductsFromIds(productIds);
+
+            //Filter out products unavailable in stock.
+            var noStockProducts = products.stream().filter(product -> !product.isAvailable()).toList();
+            if (!noStockProducts.isEmpty()) {
+                throw new StockNotAvailableException(noStockProducts);
+            }
+
             AtomicReference<BigDecimal> total = new AtomicReference<>(BigDecimal.valueOf(0.0));
             products.forEach(product -> {
                 int gst = (int) (((product.getNetPrice().doubleValue() - product.getOriginalPrice().doubleValue()) * 100) / product.getOriginalPrice().doubleValue());
@@ -109,15 +124,24 @@ public class CartServiceImpl implements CartService {
         return new CartBillResponse(cartItemResponses, totalPrice);
     }
 
+    @Override
+    public Cart updateCart(UpdateCartDto updateCartDto) {
+        return createCart(updateCartDto);
+    }
+
     private List<Product> getProductsFromIds(List<String> productIds) {
         String url = PRODUCT_URL + productIds.stream().map(String::valueOf).collect(Collectors.joining(","));
-        ResponseEntity<List<Product>> response = restTemplate.exchange(
+        var response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<>() {
                 }
         );
-        return response.getBody();
+        if (response.getBody() == null) return Collections.emptyList();
+        var list = (List<LinkedHashMap>) response.getBody();
+        List<Product> products = new ArrayList<>();
+        list.forEach(map -> products.add(modelMapper.map(map, Product.class)));
+        return products;
     }
 }

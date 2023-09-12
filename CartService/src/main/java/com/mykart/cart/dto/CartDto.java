@@ -1,6 +1,12 @@
 package com.mykart.cart.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import lombok.Data;
+
 import java.util.List;
 
-public record CartDto(List<String> productIds) {
+@Data
+public class CartDto {
+    @NotEmpty
+    private List<String> productIds;
 }

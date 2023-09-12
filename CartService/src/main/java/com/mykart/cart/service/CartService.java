@@ -2,6 +2,7 @@ package com.mykart.cart.service;
 
 import com.mykart.cart.dto.CartBillResponse;
 import com.mykart.cart.dto.CartDto;
+import com.mykart.cart.dto.UpdateCartDto;
 import com.mykart.cart.entity.Cart;
 import com.mykart.cart.model.Product;
 
@@ -21,4 +22,6 @@ public interface CartService {
     void deleteCart(String id);
 
     CartBillResponse getCartBill(String id);
+
+    Cart updateCart(UpdateCartDto updateCartDto);
 }

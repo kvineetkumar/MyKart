@@ -1,16 +1,83 @@
 package com.mykart.product.service;
 
+import com.mykart.product.constant.SortOrder;
+import com.mykart.product.dto.response.ProductResponse;
 import com.mykart.product.entity.Product;
+import com.mykart.product.entity.StockItem;
+import com.mykart.product.exception.InvalidInputException;
+import com.mykart.product.exception.ResourcesNotFoundException;
+import com.mykart.product.repository.ProductRepository;
+import com.mykart.product.repository.StockRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public interface ProductService {
+@Service
+public class ProductService {
 
-    List<Product> getAllProducts();
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private StockRepository stockRepository;
+    @Autowired
+    private ModelMapper modelMapper;
 
-    List<Product> getProductsByDateOrder(String sortOrder);
+    public List<ProductResponse> getAllProducts() {
+        List<StockItem> stockItems = stockRepository.findAllByAvailability();
+        List<Product> products = productRepository.findAllById(stockItems.stream()
+                .map(StockItem::getId)
+                .toList());
 
-    List<Product> getProductsById(List<String> productIds);
+        return mapToProductResponse(products);
+    }
 
-    List<Product> searchForProductsByKey(String keyword);
+    public List<ProductResponse> getProductsByDateOrder(String sortOrder) {
+        if (sortOrder.contentEquals(SortOrder.ASC.name()) ||
+                sortOrder.contentEquals(SortOrder.DESC.name())
+                || sortOrder.isEmpty()) {
+            SortOrder order = sortOrder.isEmpty() ? SortOrder.ASC : SortOrder.valueOf(sortOrder);
+            List<Product> products = switch (order) {
+                case ASC -> productRepository.findAllByOrderByManufacturedDateAsc();
+                case DESC -> productRepository.findAllByOrderByManufacturedDateDesc();
+            };
+
+            if (products.isEmpty()) throw new ResourcesNotFoundException("");
+            else return mapToProductResponse(products);
+        } else throw new InvalidInputException("Sort order should be either ASC or DESC");
+    }
+
+    public List<ProductResponse> getProductsById(List<String> productIds) {
+        if (!productIds.isEmpty())
+            return mapToProductResponse(productRepository.findAllById(productIds));
+        else throw new InvalidInputException("Invalid product Id(s) provided.");
+    }
+
+    public List<ProductResponse> searchForProductsByKey(String keyword) {
+        List<Product> products = productRepository.findByKeyword(keyword);
+        if (products.isEmpty()) throw new ResourcesNotFoundException("");
+        else return mapToProductResponse(products);
+    }
+
+    public boolean checkIfProductHasStock(String productId) {
+        return stockRepository.findByIdAndQuantityGreaterThan(productId, 0).isPresent();
+    }
+
+    private List<ProductResponse> mapToProductResponse(List<Product> products) {
+        if (products.isEmpty()) return Collections.emptyList();
+        List<StockItem> stockItems = stockRepository.findAllById(products.stream().map(Product::getId).toList());
+        List<ProductResponse> productResponses = new ArrayList<>();
+        products.forEach(product -> {
+            ProductResponse productResponse = new ProductResponse();
+            modelMapper.map(product, productResponse);
+            productResponse.setAvailable(stockItems.stream()
+                    .anyMatch(stockItem -> stockItem.getId()
+                            .contentEquals(product.getId())));
+            productResponses.add(productResponse);
+        });
+        return productResponses;
+    }
 }

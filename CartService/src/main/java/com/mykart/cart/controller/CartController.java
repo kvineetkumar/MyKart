@@ -2,9 +2,11 @@ package com.mykart.cart.controller;
 
 import com.mykart.cart.dto.CartBillResponse;
 import com.mykart.cart.dto.CartDto;
+import com.mykart.cart.dto.UpdateCartDto;
 import com.mykart.cart.entity.Cart;
 import com.mykart.cart.model.Product;
 import com.mykart.cart.service.CartService;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -37,6 +38,12 @@ public class CartController {
     @ResponseStatus(HttpStatus.CREATED)
     Cart createCart(@RequestBody CartDto cartDto) {
         return cartService.createCart(cartDto);
+    }
+
+    @PatchMapping("item/")
+    @ResponseStatus(HttpStatus.CREATED)
+    Cart addItemsToCart(@RequestBody @Valid UpdateCartDto updateCartDto) {
+        return cartService.updateCart(updateCartDto);
     }
 
     @GetMapping("item/{id}/product")

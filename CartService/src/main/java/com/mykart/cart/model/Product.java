@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
@@ -14,7 +15,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Product implements Serializable {
 
     private String id;
     private String name;
@@ -23,6 +24,7 @@ public class Product {
     private String description;
     private String keywords;
     private Date manufacturedDate;
+    private boolean available;
 
     // Getter and Setter for keywords as a List
     public List<String> getKeywords() {

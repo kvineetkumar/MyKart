@@ -39,6 +39,6 @@ eureka:
     prefer-ip-address: true
   client:
     register-with-eureka: true
-    fetch-registry: true
+    fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:8083/eureka

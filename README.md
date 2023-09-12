@@ -10,6 +10,7 @@ Ecommerce backend with following features:
   1. Fetch all available products, even in batch.
   2. Search for products by name.
   3. Manage a product from product catalog.
+  4. Check stock availability for every products.
 
 **Technologies Used:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, MySQL, JUnit, IntelliJ IDEA, Postman
 

@@ -1,21 +1,26 @@
 {
     "configurations": [
+        
         {
             "type": "java",
             "name": "ProductApplication",
             "request": "launch",
             "mainClass": "com.mykart.product.ProductApplication",
-            "projectName": "product"
+            "projectName": "ProductService"
         },
         {
             "type": "java",
-            "name": "Spring Boot-OrderServiceApplication<order>",
+            "name": "CartApplication",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.mykart.order.OrderServiceApplication",
-            "projectName": "order",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "mainClass": "com.mykart.cart.CartApplication",
+            "projectName": "CartService",
+        },
+        {
+            "type": "java",
+            "name": "MyKartServiceDiscovery",
+            "request": "launch",
+            "mainClass": "com.mykart.services.MyKartServiceDiscoveryApplication",
+            "projectName": "MyKartServiceDiscovery",
         }
     ]
 }

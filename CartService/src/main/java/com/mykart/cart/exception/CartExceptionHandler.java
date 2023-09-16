@@ -2,15 +2,18 @@ package com.mykart.cart.exception;
 
 import com.mykart.cart.dto.StockNotAvailableMessage;
 import com.mykart.cart.model.Product;
-import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@Log4j2
 @RestControllerAdvice
 public class CartExceptionHandler {
+
+    @Autowired
+    private Logger log;
 
     @ExceptionHandler(ResourcesNotFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "The resources which you are looking for are not available.")

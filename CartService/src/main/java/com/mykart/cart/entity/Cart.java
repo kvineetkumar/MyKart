@@ -1,17 +1,11 @@
 package com.mykart.cart.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity(name = "cart")
 public class Cart {
     @Id
@@ -20,4 +14,23 @@ public class Cart {
     private String id;
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> cartItems = new ArrayList<>();
+
+    public Cart() {
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public List<CartItem> getCartItems() {
+        return this.cartItems;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
 }

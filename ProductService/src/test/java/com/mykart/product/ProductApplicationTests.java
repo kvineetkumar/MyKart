@@ -3,7 +3,6 @@ package com.mykart.product;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mykart.product.dto.request.ProductRequest;
 import com.mykart.product.service.ProductManagementService;
-import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,7 +22,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@Log4j2
 class ProductApplicationTests {
 
     @Autowired
@@ -33,22 +31,17 @@ class ProductApplicationTests {
     private ProductManagementService productManagementService;
 
     @Test
-    void contextLoads() {
-    }
-
-    @Test
     void testCreateProduct() throws Exception {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
         String dateInString = "7-Jun-2017";
         Date date = formatter.parse(dateInString);
-        ProductRequest productRequest = ProductRequest.builder()
-                .name("Lenovo Yoga")
-                .description("Lenovo Yoga is a powerful foldable 14 inch laptop with 16GB RAM and 512 GB SSD.")
-                .keywords(Arrays.asList("Lenovo", "Foldable", "14 inch", "16GB RAM", "512GB SSD"))
-                .originalPrice(BigDecimal.valueOf(132000.0))
-                .netPrice(BigDecimal.valueOf(135462.0))
-                .manufacturedDate(date)
-                .build();
+        ProductRequest productRequest = new ProductRequest();
+        productRequest.setName("Lenovo Yoga");
+        productRequest.setDescription("Lenovo Yoga is a powerful foldable 14 inch laptop with 16GB RAM and 512 GB SSD.");
+        productRequest.setKeywords(Arrays.asList("Lenovo", "Foldable", "14 inch", "16GB RAM", "512GB SSD"));
+        productRequest.setOriginalPrice(BigDecimal.valueOf(132000.0));
+        productRequest.setNetPrice(BigDecimal.valueOf(135462.0));
+        productRequest.setManufacturedDate(date);
 
         mockMvc.perform(post("/api/v1/product/manage/")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)

@@ -2,5 +2,6 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.dependency.packagePresentation": "hierarchical",
     "java.compile.nullAnalysis.mode": "automatic",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "java.project.explorer.showNonJavaResources": true
 }

@@ -14,6 +14,6 @@ Ecommerce backend with following features:
 
 **Technologies Used:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, MySQL, JUnit, IntelliJ IDEA, Postman
 
-**Spring Boot Features Used:** Spring MVC, Spring Data JPA, Spring Test, Spring Validation, Spring Doc, Spring Cloud Netflix Eureka
+**Spring Boot Features Used:** Spring MVC, Spring Data JPA, Spring Test, Spring Validation, Spring Doc/Open API, Spring Cloud Netflix Eureka
 
 **Note:** More features coming soon like Security, CI/CD and deployment to AWS cloud...

@@ -61,3 +61,5 @@ out/production/MyKart/.idea/vcs.xml
 out/production/MyKart/.idea/workspace.xml
 out/production/MyKart/.vscode/launch.json
 out/production/MyKart/.vscode/settings.json
+/**/.idea/*
+/**/.vscode/*

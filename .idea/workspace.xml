@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="617b2a0b-1a3e-485d-a73e-b08e40b4452b" name="Changes" comment="Refactor: 1. Removed Lombok dependency. 2. Resolved module issue where all modules are not properly displayed in the IDE.">
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/CacheConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fff11cececb6c917971049c00aff5935cec1dd9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/ProductConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/ProductConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

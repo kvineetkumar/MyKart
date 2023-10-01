@@ -7,8 +7,6 @@ QProductService/src/main/java/com/mykart/product/repository/ProductRepository.ja
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 {
 KProductService/src/main/java/com/mykart/product/service/ProductService.java,7\2\7276955b6daf17a839e7105af59ccbbc4976db14
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 Å
 QProductService/src/main/java/com/mykart/product/controller/ProductController.java,f\a\fab215f243f0ef9d107fb6a296716a443ca35fc4
 C
@@ -17,8 +15,6 @@ C
 LCartService/src/main/java/com/mykart/cart/repository/CartItemRepository.java,f\f\ff63e92e640d2258b9a85fd0dd2237bb74841dbc
 x
 HCartService/src/main/java/com/mykart/cart/repository/CartRepository.java,2\5\25afd5b47cc427f86faf3c939b7345c9f0ac163e
-v
-FCartService/src/main/java/com/mykart/cart/service/CartServiceImpl.java,f\f\ff358f8e91d12bc18248af448242f4080c66ed20
 r
 BCartService/src/main/java/com/mykart/cart/service/CartService.java,3\8\38e5550daf2f7f4d24244dd2702aaab660426e05
 w
@@ -47,3 +43,6 @@ F
 OProductService/src/main/java/com/mykart/product/dto/request/ProductRequest.java,0\f\0fff11cececb6c917971049c00aff5935cec1dd9
 x
 HCartService/src/main/java/com/mykart/cart/controller/CartController.java,a\e\ae831cbeface08b767349181d1f2c05ec3fc04c4
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

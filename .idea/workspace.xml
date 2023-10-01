@@ -4,45 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="617b2a0b-1a3e-485d-a73e-b08e40b4452b" name="Changes" comment="- Major Fix: Added unversioned files of Cart Service">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fff11cececb6c917971049c00aff5935cec1dd9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0fff11cececb6c917971049c00aff5935cec1dd9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyKartServiceDiscovery/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="617b2a0b-1a3e-485d-a73e-b08e40b4452b" name="Changes" comment="Refactor: 1. Removed Lombok dependency. 2. Resolved module issue where all modules are not properly displayed in the IDE.">
+      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/CacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fff11cececb6c917971049c00aff5935cec1dd9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CartService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/config/CartConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/config/CartConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/CartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/CartDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/StockNotAvailableMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/StockNotAvailableMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/UpdateCartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/dto/UpdateCartDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/entity/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/exception/CartExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/exception/CartExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/exception/StockNotAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/exception/StockNotAvailableException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/ProductConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/config/ProductConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/dto/request/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/dto/request/ProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/dto/response/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/dto/response/ProductResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/entity/StockItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/entity/StockItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/exception/ProductExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/exception/ProductExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/test/java/com/mykart/product/ProductApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/test/java/com/mykart/product/ProductApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/mykart/product/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,14 +63,19 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/kvine/Desktop/Learning/MyKart/CartService/src/test/java/com/mykart/cart&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kvine/Desktop/Learning/MyKart/MyKartServiceDiscovery&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kvine/Desktop/Learning/UserService/pom.xml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.10263932&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.25588864&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;SQL&quot;
+    ]
   }
 }</component>
-  <component name="RunManager" selected="Application.CartApplication">
+  <component name="RunManager" selected="Application.ProductApplication">
     <configuration name="CartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mykart.cart.CartApplication" />
       <module name="CartService" />
@@ -138,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CartApplication" />
         <item itemvalue="Application.ProductApplication" />
+        <item itemvalue="Application.CartApplication" />
         <item itemvalue="Application.MyKartServiceDiscoveryApplication" />
       </list>
     </recent_temporary>
@@ -169,24 +161,30 @@
       <option name="project" value="LOCAL" />
       <updated>1690900777280</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor: 1. Removed Lombok dependency. 2. Resolved module issue where all modules are not properly displayed in the IDE.">
+      <option name="closed" value="true" />
+      <created>1694866127752</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694866127752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- renamed Order to Cart Service - added searchByKeyword API in Product Service" />
     <MESSAGE value="- Major Fix: Added unversioned files of Cart Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Major Fix: Added unversioned files of Cart Service" />
+    <MESSAGE value="Refactor: 1. Removed Lombok dependency. 2. Resolved module issue where all modules are not properly displayed in the IDE." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: 1. Removed Lombok dependency. 2. Resolved module issue where all modules are not properly displayed in the IDE." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CartService/src/main/java/com/mykart/cart/service/CartService.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.Optional" memberName="value" />
+        <PinnedItemInfo parentTag="com.mykart.cart.entity.Cart" memberName="cartItems" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

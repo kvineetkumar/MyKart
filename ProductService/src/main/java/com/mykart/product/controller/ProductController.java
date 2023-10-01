@@ -23,6 +23,12 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping("stock")
+    @ResponseStatus(HttpStatus.OK)
+    List<ProductResponse> getAllAvailableProducts() {
+        return productService.getAllAvailableProducts();
+    }
+
     @GetMapping("{productIds}")
     @ResponseStatus(HttpStatus.OK)
     List<ProductResponse> getProductsByIds(@PathVariable("productIds") List<String> productIds) {

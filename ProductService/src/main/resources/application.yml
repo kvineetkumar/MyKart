@@ -22,11 +22,12 @@ spring:
     date-format: yyyy-MM-dd
 
 logging:
-  .level:
+  level:
     root: ERROR
     com.mykart: DEBUG
     org.springframework.web: ERROR
     org.hibernate: ERROR
+    org.springframework.cache: TRACE
 
 springdoc:
   api-docs:

@@ -10,6 +10,7 @@ import com.mykart.product.repository.ProductRepository;
 import com.mykart.product.repository.StockRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,7 +27,14 @@ public class ProductService {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Cacheable(value = "productsCache")
     public List<ProductResponse> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+        if (products.isEmpty()) throw new ResourcesNotFoundException();
+        return mapToProductResponse(products);
+    }
+
+    public List<ProductResponse> getAllAvailableProducts() {
         List<StockItem> stockItems = stockRepository.findAllByAvailability();
         List<Product> products = productRepository.findAllById(stockItems.stream()
                 .map(StockItem::getId)

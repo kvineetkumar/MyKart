@@ -111,6 +111,7 @@ public class CartService {
             if (!noStockProducts.isEmpty()) {
                 throw new StockNotAvailableException(noStockProducts);
             }
+            //products.removeIf(product -> !product.isAvailable());
 
             AtomicReference<BigDecimal> total = new AtomicReference<>(BigDecimal.valueOf(0.0));
             products.forEach(product -> {
@@ -123,7 +124,6 @@ public class CartService {
 
         return new CartBillResponse(cartItemResponses, totalPrice);
     }
-
 
     public Cart updateCart(UpdateCartDto updateCartDto) {
         return createCart(updateCartDto);

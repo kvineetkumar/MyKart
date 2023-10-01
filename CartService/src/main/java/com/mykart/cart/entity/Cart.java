@@ -12,7 +12,7 @@ public class Cart {
     @UuidGenerator
     @Column(name = "cart_id")
     private String id;
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<CartItem> cartItems = new ArrayList<>();
 
     public Cart() {

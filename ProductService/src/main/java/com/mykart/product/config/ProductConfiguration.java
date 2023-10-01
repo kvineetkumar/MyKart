@@ -19,6 +19,6 @@ public class ProductConfiguration {
 
     @Bean(name = "log")
     public Logger logger() {
-        return LogManager.getLogger("cart-service");
+        return LogManager.getLogger("product-service");
     }
 }

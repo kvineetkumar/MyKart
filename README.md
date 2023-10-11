@@ -12,6 +12,6 @@ Ecommerce backend with following features:
   3. Manage a product from product catalog.
   4. Check stock availability for every products.
 
-**Technologies Used:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, MySQL, JUnit, IntelliJ IDEA, Postman
+**Technologies Used:** Java 17, Spring Boot, Microservices, MySQL, JUnit
 
 **Spring Boot Features Used:** Spring MVC, Spring Data JPA, Spring Test, Spring Validation, Spring Doc/Open API, Spring Cloud Netflix Eureka

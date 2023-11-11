@@ -11,6 +11,8 @@ import com.mykart.product.repository.StockRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -64,10 +66,16 @@ public class ProductService {
         else throw new InvalidInputException("Invalid product Id(s) provided.");
     }
 
-    public List<ProductResponse> searchForProductsByKey(String keyword) {
-        List<Product> products = productRepository.findByKeyword(keyword);
-        if (products.isEmpty()) throw new ResourcesNotFoundException("");
-        else return mapToProductResponse(products);
+    public List<ProductResponse> searchForProductsByKey(String keyword, int page, int size) {
+        if (size > 0) {
+            PageRequest pageRequest = PageRequest.of(page, size);
+            Page<Product> productsPage = productRepository.findByKeywordsContaining(keyword, pageRequest);
+            var products = productsPage.getContent();
+            return mapToProductResponse(products);
+        } else {
+            var products = productRepository.findByKeyword(keyword);
+            return mapToProductResponse(products);
+        }
     }
 
     public boolean checkIfProductHasStock(String productId) {

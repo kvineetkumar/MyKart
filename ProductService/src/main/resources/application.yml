@@ -4,12 +4,16 @@ server:
     include-message: ALWAYS
 
 spring:
+  profiles:
+    active: container
   application:
     name: product-service
+  main:
+    banner-mode: "off"
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/mykart?useSSL=false
+    url: jdbc:mysql://host.docker.internal:3306/mykart?&autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
     username: root
   jpa:
     hibernate:
@@ -36,10 +40,8 @@ springdoc:
     path: /swagger-ui.html
 
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://localhost:8083/eureka
+      defaultZone: http://mykart-eureka-container:8083/eureka

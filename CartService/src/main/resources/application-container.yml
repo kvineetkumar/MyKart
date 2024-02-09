@@ -1,0 +1,3 @@
+spring:
+  datasource:
+    url: jdbc:mysql://host.docker.internal:3306/mykart?&autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false

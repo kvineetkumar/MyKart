@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 @Service
 public class CartService {
 
-    private static final String PRODUCT_URL = "http://product-service/api/v1/product/";
+    private static final String PRODUCT_URL = "http://product-service:8081/api/v1/product/";
 
     @Autowired
     private CartRepository cartRepository;
